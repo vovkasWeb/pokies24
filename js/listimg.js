@@ -451,7 +451,7 @@ const img = [
 
 const blockGame = document.querySelector('.game__list')
 const butsSort = document.querySelectorAll('.game__btn')
-
+butsSort[0].classList.add('active')
 // Функция для отображения игр
 function displayGames(games) {
 	blockGame.innerHTML = '' // Очищаем контейнер
@@ -470,6 +470,8 @@ displayGames(img)
 // Обработчик клика по кнопкам фильтрации
 butsSort.forEach(button => {
 	button.addEventListener('click', () => {
+		butsSort.forEach(btn => btn.classList.remove('active'))
+		button.classList.add('active')
 		const filter = button.getAttribute('data-filter')
 		let filteredGames
 

@@ -42,7 +42,7 @@ track.addEventListener('mouseup', e => {
 })
 
 const start = () =>
-    (auto = setInterval(() => goTo((current + 1) % total), 5000))
+    (auto = setInterval(() => goTo((current + 1) % total), 50000))
 const restart = () => {
     clearInterval(auto)
     start()
