@@ -12,10 +12,38 @@ export function restartSlider() {
 	restartTimeout()
 	updateInnerSlider()
 }
+let scrolle = 33.333
 
 const updateInnerSlider = () => {
-	innerTrack.style.transform = `translateX(-${innerIndex * 33.3333}%)`
+	innerTrack.style.transform = `translateX(-${innerIndex * scrolle}%)`
 }
+
+function updateScrollValue() {
+	const element = document.querySelector('.inner-slide')
+	const flexValue = parseFloat(getComputedStyle(element).flexBasis)
+
+	if (flexValue === 50) {
+		scrolle = 100
+	} else if (flexValue === 33.333) {
+		scrolle = 33.333
+	} else {
+		// на всякий случай дефолт
+		scrolle = 33.333
+	}
+	restartSlider()
+
+}
+
+// запуск при загрузке
+updateScrollValue()
+
+// запуск при изменении размера экрана
+window.addEventListener('resize', updateScrollValue)
+
+// если нужно при повороте экрана на мобилке
+window.addEventListener('orientationchange', updateScrollValue)
+
+
 
 function toggleActive() {
 	innerPrev.classList.toggle('active')
