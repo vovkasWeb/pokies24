@@ -91,7 +91,127 @@ body {
 .header__btn-reg {
 	padding: 15px 37px;
 }
+/**/
+.slider__wrapp-mobile {
+	padding-top: 12px;
+	overflow: hidden;
+	width: 100%;
+}
+.slide__track-mobile {
+	display: flex;
+	transition: transform 0.4s ease;
+}
 
+.slide-mobile {
+	min-width: 100%;
+	max-height: 300px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	color: white;
+	position: relative;
+}
+.slide__body-mobile {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	right: 0;
+}
+.slide__title-mobile {
+	width: 300px;
+	font-weight: 900;
+	font-size: 33px;
+	line-height: 34px;
+	text-transform: uppercase;
+	color: #ffffff;
+}
+.slide__title-mobile span {
+	color: #ffc700;
+}
+.slide__lin-mobile {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+	color: #ffc700;
+	font-size: 22px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+.slide__title-block-mobile {
+	font-size: 43px;
+}
+.slide__bottom-line {
+	position: absolute;
+	bottom: 10px;
+	left: 15px;
+	right: 0;
+	display: flex;
+	gap: 10px;
+}
+.slide__bottom-line a {
+	font-size: 16px;
+	font-weight: 600;
+	padding: 10px 16px;
+	border-radius: 8px;
+}
+.slide__text-mobile {
+	margin-top: 6px;
+	font-weight: 600;
+	font-size: 12px;
+	width: 185px;
+}
+.slide__line-block-mobile {
+	display: flex;
+	flex-direction: column;
+}
+
+.slide-mobile img {
+	border-radius: 20px;
+	width: 100%;
+	margin: 0 auto;
+}
+.slider-mobile {
+	padding-top: 20px;
+	display: none;
+}
+.slider-title-mobile {
+	font-weight: 600;
+	font-size: 18px;
+	color: #ffffff;
+}
+.slide__line-mobile {
+	padding-top: 10px;
+	display: flex;
+	justify-content: space-evenly;
+	gap: 5px;
+}
+.slide__btn-mobile {
+	width: 65px;
+}
+.slide__btn-mobile.active {
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid #ffc700;
+}
+.slider__bottom-mobile {
+	padding-top: 15px;
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+}
+.slider-bottom__btn-mobil {
+	width: 45px;
+	border-radius: 5px;
+	height: 3px;
+	background-color: #383a5d;
+	transition: all ease 0.4s;
+}
+.slider-bottom__btn-mobil.active {
+	background-color: #ffc727;
+	box-shadow: 0px 2px 8px 0px #ffc72754;
+}
 /**/
 
 .slider {
@@ -354,6 +474,50 @@ body {
 	border-radius: 10px;
 	width: 100%;
 	box-sizing: border-box;
+}
+
+.game__line-mobile {
+	display: none;
+	justify-content: start;
+	gap: 6px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+.game__line-mobile::-webkit-scrollbar {
+	display: none; /* Chrome, Safari */
+}
+.game__list-mobile {
+	display: none;
+	width: 100%;
+	grid-template-columns: repeat(2, 1fr);
+	grid-auto-rows: 1fr;
+	gap: 2px;
+	margin: 0 auto;
+	padding-top: 15px;
+	box-sizing: border-box;
+}
+.game__list-mobile div {
+	height: auto;
+}
+.game__btn-mobile {
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	width: 68px;
+	padding: 5px 0;
+	background-color: #1c242e;
+	border-radius: 5px;
+}
+.game__btn-mobile span {
+	font-weight: 600;
+	font-size: 11px;
+	color: #ffffff;
 }
 
 /*info*/
@@ -760,20 +924,64 @@ body {
 	.footer__body {
 		padding: 0 0 10px 0;
 	}
-	.footer__accordion-container{
+	.footer__accordion-container {
 		width: 100%;
 	}
 	.footer__accordion {
 		display: block;
 		width: 100%;
 	}
-	.mastercard2-logo,.payoneer2-logo,.applePay-logo{
+	.mastercard2-logo,
+	.payoneer2-logo,
+	.applePay-logo {
 		display: none;
 	}
-	.slider,.slide__line{
+	.slider,
+	.slide__line {
 		display: none;
 	}
-	.game__line-btn,.game__list{
+	.game__line-btn,
+	.game__list {
 		display: none;
+	}
+	.slider-mobile {
+		display: block;
+	}
+	.game__title {
+		padding-top: 15px;
+		font-size: 20px;
+	}
+	.game__line-mobile {
+		display: flex;
+	}
+	.game__list-mobile {
+		display: grid;
+	}
+	.show-more-btn {
+		display: block;
+		margin: 20px auto;
+		padding: 10px 20px;
+		cursor: pointer;
+	}
+	.show-more-btn.hidden {
+		display: none;
+	}
+}
+@media (max-width: 350px) {
+	.slide__title-mobile {
+		width: 250px;
+		font-size: 26px;
+		line-height: 26px;
+	}
+	.slide__lin-mobile {
+		font-size: 18px;
+	}
+	.slide__title-block-mobile {
+		font-size: 38px;
+	}
+	.slide__bottom-line a {
+		font-size: 14px;
+		padding: 8px 12px;
+		border-radius: 8px;
 	}
 }

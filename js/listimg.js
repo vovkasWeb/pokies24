@@ -449,6 +449,46 @@ const img = [
 	},
 ]
 
+const blockGameMini = document.querySelector('.game__list-mobile')
+const butsSortMini = document.querySelectorAll('.game__btn-mobile')
+butsSortMini[0].classList.add('active')
+// Функция для отображения игр
+function displayGamesMini(games) {
+	blockGameMini.innerHTML = '' // Очищаем контейнер
+	games.forEach(game => {
+		const gameElement = document.createElement('img')
+		gameElement.className = 'game__img-list'
+		gameElement.src = `./img/game/${game.imgName}.png`
+		gameElement.alt = game.imgName
+		blockGameMini.appendChild(gameElement)
+	})
+}
+
+// Изначально отображаем все игры
+displayGamesMini(img)
+
+// Обработчик клика по кнопкам фильтрации
+butsSortMini.forEach(button => {
+	button.addEventListener('click', () => {
+		butsSortMini.forEach(btn => btn.classList.remove('active'))
+
+		button.classList.add('active')
+		const filter = button.getAttribute('data-filter')
+		let filteredGames
+
+		if (filter === 'all') {
+			filteredGames = img
+		} else {
+			filteredGames = img.filter(game => game[filter])
+		}
+
+		displayGamesMini(filteredGames)
+	})
+})
+
+
+//main list
+
 const blockGame = document.querySelector('.game__list')
 const butsSort = document.querySelectorAll('.game__btn')
 butsSort[0].classList.add('active')
