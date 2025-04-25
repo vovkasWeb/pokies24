@@ -58,7 +58,7 @@ menuBtns.forEach(menuBtn => {
 			activeAccordion.nextElementSibling.style.height = 0
 			activeAccordion.nextElementSibling.style.padding = '0px 20px'
 			activeAccordion.classList.remove('open')
-			activeAccordion.querySelector('.icon-img-btn').style.transform = 'rotate(-180deg)';
+			activeAccordion.querySelector('.icon-img-btn').style.transform = 'rotate(0)';
 		}
 		menuBtn.classList.toggle('open')
 		const icon = menuBtn.querySelector('.icon')

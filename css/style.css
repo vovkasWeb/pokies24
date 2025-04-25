@@ -387,11 +387,12 @@ body {
 }
 
 .table-cell {
-	flex: 1;
 	padding: clamp(8px, 3vw, 14px) clamp(12px, 3vw, 14px);
 	font-size: clamp(14px, 3vw, 18px);
 	font-weight: 400;
 	background: #25263d;
+	display: flex;
+	align-items: center;
 }
 .table-header .table-cell:first-child {
 	border-top-left-radius: 15px;
@@ -658,7 +659,7 @@ body {
 	}
 	.footer__right-body {
 		order: 1;
-		margin-top: 20px;
+		margin: 20px 0;
 	}
 	.inner-controls {
 	}
@@ -690,7 +691,7 @@ body {
 		transition: all ease 0.4s;
 	}
 	.game__list {
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		gap: 5px;
 	}
 	.header__wrapper {
@@ -737,5 +738,42 @@ body {
 		gap: 5px;
 		width: 50px;
 		height: 4px;
+	}
+	.footer__right-body {
+		margin: 10px 0;
+	}
+	.footer__text-body {
+		width: 100%;
+	}
+}
+
+@media (max-width: 500px) {
+	.footer__logo svg {
+		width: 50px;
+	}
+	.footer__block-top {
+		gap: 10px;
+	}
+	.footer__messege-top {
+		display: none;
+	}
+	.footer__body {
+		padding: 0 0 10px 0;
+	}
+	.footer__accordion-container{
+		width: 100%;
+	}
+	.footer__accordion {
+		display: block;
+		width: 100%;
+	}
+	.mastercard2-logo,.payoneer2-logo,.applePay-logo{
+		display: none;
+	}
+	.slider,.slide__line{
+		display: none;
+	}
+	.game__line-btn,.game__list{
+		display: none;
 	}
 }
