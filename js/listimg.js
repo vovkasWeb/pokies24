@@ -451,41 +451,60 @@ const img = [
 
 const blockGameMini = document.querySelector('.game__list-mobile')
 const butsSortMini = document.querySelectorAll('.game__btn-mobile')
+const showMoreBtn = document.querySelector('.show-more-btn')
+
+let currentFilter = 'all'
+let currentGames = [...img]
+let visibleCount = 18
+
 butsSortMini[0].classList.add('active')
-// Функция для отображения игр
-function displayGamesMini(games) {
-	blockGameMini.innerHTML = '' // Очищаем контейнер
-	games.forEach(game => {
+
+// Функция для отображения нужного количества игр
+function displayGamesMini(games, count) {
+	blockGameMini.innerHTML = ''
+	games.slice(0, count).forEach(game => {
 		const gameElement = document.createElement('img')
 		gameElement.className = 'game__img-list'
 		gameElement.src = `./img/game/${game.imgName}.png`
 		gameElement.alt = game.imgName
 		blockGameMini.appendChild(gameElement)
 	})
+	if (getComputedStyle(blockGameMini).display === 'grid') {
+		if (games.length > count) {
+			showMoreBtn.classList.remove('hidden')
+		} else {
+			showMoreBtn.classList.add('hidden')
+		}
+	}
 }
 
-// Изначально отображаем все игры
-displayGamesMini(img)
-
-// Обработчик клика по кнопкам фильтрации
+// Фильтрация и сброс при смене категории
 butsSortMini.forEach(button => {
 	button.addEventListener('click', () => {
 		butsSortMini.forEach(btn => btn.classList.remove('active'))
-
 		button.classList.add('active')
-		const filter = button.getAttribute('data-filter')
-		let filteredGames
 
-		if (filter === 'all') {
-			filteredGames = img
+		currentFilter = button.getAttribute('data-filter')
+		visibleCount = 18
+
+		if (currentFilter === 'all') {
+			currentGames = [...img]
 		} else {
-			filteredGames = img.filter(game => game[filter])
+			currentGames = img.filter(game => game[currentFilter])
 		}
 
-		displayGamesMini(filteredGames)
+		displayGamesMini(currentGames, visibleCount)
 	})
 })
 
+// Кнопка "Показать ещё"
+showMoreBtn.addEventListener('click', () => {
+	visibleCount += 10
+	displayGamesMini(currentGames, visibleCount)
+})
+
+// Первый запуск
+displayGamesMini(currentGames, visibleCount)
 
 //main list
 

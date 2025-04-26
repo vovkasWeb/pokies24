@@ -1,0 +1,37 @@
+// Select modal elements
+const listItem = document.querySelector('.game__list-mobile')
+const modalOverlay = document.querySelector('.modal-overlay')
+const closeModalBtn = document.querySelector('.close-modal-btn')
+
+listItem.addEventListener('click', function (event) {
+	const target = event.target
+	if (target.matches('.game__img-list')) {
+		document.body.style.overflow = 'hidden'
+		modalOverlay.classList.add('open')
+		const imgModal = document.querySelector('.modal__img')
+		imgModal.src = `./img/game/${target.alt}.png`
+		imgModal.alt = target.alt
+	}
+})
+const closedModal = () => {
+	modalOverlay.classList.remove('open')
+	document.body.style.overflow = ''
+}
+
+closeModalBtn.addEventListener('click', function () {
+	closedModal()
+})
+
+// Close modal if clicking outside of the modal content
+modalOverlay.addEventListener('click', function (e) {
+	if (e.target === modalOverlay) {
+		closedModal()
+	}
+})
+
+// Close modal using Esc key
+document.addEventListener('keydown', function (e) {
+	if (e.key === 'Escape') {
+		closedModal()
+	}
+})
