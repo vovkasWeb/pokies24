@@ -547,6 +547,9 @@ body {
 .game__list-mobile div {
 	height: auto;
 }
+.show-more-btn {
+	display: none;
+}
 .game__btn-mobile {
 	display: flex;
 	flex-shrink: 0;
@@ -649,6 +652,10 @@ body {
 	display: flex;
 	gap: 5px;
 	align-items: center;
+	transition: all ease 0.4s;
+}
+.footer__messege-top:hover {
+	text-decoration: underline;
 }
 .footer__chat-top {
 	border: 1px solid #3a404f;
@@ -660,6 +667,10 @@ body {
 	display: flex;
 	gap: 5px;
 	align-items: center;
+	transition: all ease 0.4s;
+}
+.footer__chat-top:hover {
+	background-color: #232323;
 }
 .footer__body {
 	padding: 40px 0;
@@ -879,6 +890,38 @@ body {
 .close-modal-btn:hover {
 	background-color: #555;
 }
+/*up btn*/
+.scroll-to-top-btn,
+.scroll-chat-btn {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	display: none;
+	background: #1d252fcf;
+	opacity: 95%;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	font-size: 24px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	border: 1px solid #3a404f;
+}
+.scroll-to-top-btn:hover,
+.scroll-chat-btn:hover {
+	background: #252e3acf;
+}
+.scroll-chat-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 80px;
+}
+.scroll-chat-btn img {
+	width: 65%;
+}
 
 @media (max-width: 1150px) {
 	.info__table {
@@ -890,9 +933,23 @@ body {
 	}
 }
 @media (max-width: 900px) {
+	.table-row {
+		gap: 2px;
+		grid-template-columns: 172px 70px 197px 200px;
+		margin-bottom: 2px;
+	}
+	.table-cell {
+		padding: 8px 12px;
+		font-size: 14px;
+	}
+	.table-header .table-cell {
+		font-size: 14px;
+		line-height: 14px;
+	}
 	.info__table {
 		width: 100%;
 	}
+
 	.info__table-line {
 		width: 100%;
 		overflow-x: auto;
@@ -925,19 +982,6 @@ body {
 	}
 }
 @media (max-width: 800px) {
-	.table-row {
-		gap: 2px;
-		grid-template-columns: 172px 70px 197px 200px;
-		margin-bottom: 2px;
-	}
-	.table-cell {
-		padding: 8px 12px;
-		font-size: 14px;
-	}
-	.table-header .table-cell {
-		font-size: 14px;
-		line-height: 14px;
-	}
 	.footer__img-footer {
 		width: 45px;
 	}
@@ -1019,9 +1063,6 @@ body {
 	.game__list {
 		grid-template-columns: repeat(4, 1fr);
 		gap: 5px;
-	}
-	.show-more-btn {
-		display: none;
 	}
 	.header__wrapper {
 		display: flex;
@@ -1138,8 +1179,12 @@ body {
 	.game {
 		padding-bottom: 0px;
 	}
-	.show-more-btn {
-		display: block;
+	.scroll-to-top-btn {
+		bottom: 70px;
+		right: 5px;
+	}
+	.scroll-chat-btn {
+		display: none;
 	}
 }
 @media (max-width: 350px) {

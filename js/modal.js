@@ -1,9 +1,10 @@
 // Select modal elements
-const listItem = document.querySelector('.game__list-mobile')
+const listItem = document.querySelector('.game__list')
+const listItemMini = document.querySelector('.game__list-mobile')
 const modalOverlay = document.querySelector('.modal-overlay')
 const closeModalBtn = document.querySelector('.close-modal-btn')
 
-listItem.addEventListener('click', function (event) {
+const openModal = event => {
 	const target = event.target
 	if (target.matches('.game__img-list')) {
 		document.body.style.overflow = 'hidden'
@@ -12,7 +13,9 @@ listItem.addEventListener('click', function (event) {
 		imgModal.src = `./img/game/${target.alt}.png`
 		imgModal.alt = target.alt
 	}
-})
+}
+listItem.addEventListener('click', openModal)
+listItemMini.addEventListener('click', openModal)
 const closedModal = () => {
 	modalOverlay.classList.remove('open')
 	document.body.style.overflow = ''

@@ -54,14 +54,16 @@ innerNext.onclick = () => {
 	innerIndex = 1
 	updateInnerSlider()
 	cancelTimeout()
-	toggleActive()
+	innerNext.classList.add('active')
+	innerPrev.classList.remove('active')
 }
 
 innerPrev.onclick = () => {
 	innerIndex = 0
 	updateInnerSlider()
 	restartTimeout()
-	toggleActive()
+	innerPrev.classList.add('active')
+	innerNext.classList.remove('active')
 }
 
 function startTimeout() {
