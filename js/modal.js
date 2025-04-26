@@ -24,15 +24,11 @@ const closedModal = () => {
 closeModalBtn.addEventListener('click', function () {
 	closedModal()
 })
-
-// Close modal if clicking outside of the modal content
 modalOverlay.addEventListener('click', function (e) {
 	if (e.target === modalOverlay) {
 		closedModal()
 	}
 })
-
-// Close modal using Esc key
 document.addEventListener('keydown', function (e) {
 	if (e.key === 'Escape') {
 		closedModal()

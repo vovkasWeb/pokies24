@@ -459,7 +459,6 @@ let visibleCount = 18
 
 butsSortMini[0].classList.add('active')
 
-// Функция для отображения нужного количества игр
 function displayGamesMini(games, count) {
 	blockGameMini.innerHTML = ''
 	games.slice(0, count).forEach(game => {
@@ -478,7 +477,6 @@ function displayGamesMini(games, count) {
 	}
 }
 
-// Фильтрация и сброс при смене категории
 butsSortMini.forEach(button => {
 	button.addEventListener('click', () => {
 		butsSortMini.forEach(btn => btn.classList.remove('active'))
@@ -497,23 +495,18 @@ butsSortMini.forEach(button => {
 	})
 })
 
-// Кнопка "Показать ещё"
 showMoreBtn.addEventListener('click', () => {
 	visibleCount += 10
 	displayGamesMini(currentGames, visibleCount)
 })
 
-// Первый запуск
 displayGamesMini(currentGames, visibleCount)
-
-//main list
 
 const blockGame = document.querySelector('.game__list')
 const butsSort = document.querySelectorAll('.game__btn')
 butsSort[0].classList.add('active')
-// Функция для отображения игр
 function displayGames(games) {
-	blockGame.innerHTML = '' // Очищаем контейнер
+	blockGame.innerHTML = '' 
 	games.forEach(game => {
 		const gameElement = document.createElement('div')
 		gameElement.innerHTML = `
@@ -523,10 +516,8 @@ function displayGames(games) {
 	})
 }
 
-// Изначально отображаем все игры
 displayGames(img)
 
-// Обработчик клика по кнопкам фильтрации
 butsSort.forEach(button => {
 	button.addEventListener('click', () => {
 		butsSort.forEach(btn => btn.classList.remove('active'))

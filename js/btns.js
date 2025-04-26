@@ -1,20 +1,18 @@
-// Находим кнопку
+
 const scrollToTopBtn = document.querySelector('.scroll-to-top-btn')
 
-// Слушаем событие прокрутки страницы
 window.addEventListener('scroll', () => {
 	if (window.scrollY > 300) {
 		// Если прокрутили больше 300px
-		scrollToTopBtn.style.display = 'block' // Показываем кнопку
+		scrollToTopBtn.style.display = 'block' 
 	} else {
-		scrollToTopBtn.style.display = 'none' // Скрываем кнопку
+		scrollToTopBtn.style.display = 'none' 
 	}
 })
 
-// При клике на кнопку прокручиваем страницу наверх
 scrollToTopBtn.addEventListener('click', () => {
 	window.scrollTo({
 		top: 0,
-		behavior: 'smooth', // Плавная прокрутка
+		behavior: 'smooth',
 	})
 })

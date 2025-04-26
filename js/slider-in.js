@@ -27,20 +27,14 @@ function updateScrollValue() {
 	} else if (flexValue === 33.333) {
 		scrolle = 33.333
 	} else {
-		// на всякий случай дефолт
 		scrolle = 33.333
 	}
 	restartSlider()
 
 }
 
-// запуск при загрузке
 updateScrollValue()
-
-// запуск при изменении размера экрана
 window.addEventListener('resize', updateScrollValue)
-
-// если нужно при повороте экрана на мобилке
 window.addEventListener('orientationchange', updateScrollValue)
 
 
