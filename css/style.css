@@ -276,6 +276,9 @@ body {
 	border-radius: 30px;
 	transition: all ease 1s;
 }
+.slider-btn img {
+	width: 68px;
+}
 
 .slider-btn.active {
 	background: linear-gradient(90deg, #232540 0%, #5933d9 100%);
@@ -496,7 +499,7 @@ body {
 .game__line-mobile-wrapper {
 	position: relative;
 	width: 100%;
-	overflow: hidden; 
+	overflow: hidden;
 }
 
 .game__line-mobile {
@@ -531,7 +534,7 @@ body {
 	z-index: 1;
 }
 .game__line-mobile::-webkit-scrollbar {
-	display: none; 
+	display: none;
 }
 .game__list-mobile {
 	display: none;
@@ -591,13 +594,13 @@ body {
 	font-size: clamp(14px, 3vw, 16px);
 	font-weight: 400;
 	color: #ffffff;
+	margin-top: 15px;
 }
 .info__table {
 	padding-top: 15px;
 	width: 80%;
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 10px;
 }
 .table-row {
 	display: grid;
