@@ -505,6 +505,8 @@ body {
 	border-radius: 10px;
 	transition: all ease 0.5s;
 	z-index: 1;
+	user-select: none;
+	pointer-events: none;
 }
 .game__block-img::after {
 	content: '';
@@ -683,32 +685,9 @@ body {
 	display: flex;
 	gap: 40px;
 }
-.footer__messege-top {
-	font-size: 16px;
-	font-weight: 500;
-	display: flex;
-	gap: 5px;
-	align-items: center;
-	transition: all ease 0.4s;
-}
-.footer__messege-top:hover {
-	text-decoration: underline;
-}
-.footer__chat-top {
-	border: 1px solid #3a404f;
-	border-radius: 10px;
-	color: #ffc700;
-	font-size: 14px;
-	font-weight: 600;
-	padding: 10px 30px;
-	display: flex;
-	gap: 5px;
-	align-items: center;
-	transition: all ease 0.4s;
-}
-.footer__chat-top:hover {
-	background-color: #232323;
-}
+
+
+
 .footer__body {
 	padding: 40px 0;
 	display: flex;
@@ -955,19 +934,7 @@ body {
 	transition: background-color 0.3s ease;
 	border: 1px solid #3a404f;
 }
-.scroll-to-top-btn:hover,
-.scroll-chat-btn:hover {
-	background: #252e3acf;
-}
-.scroll-chat-btn {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	bottom: 80px;
-}
-.scroll-chat-btn img {
-	width: 65%;
-}
+
 
 @media (max-width: 1150px) {
 	.info__table {
@@ -1182,9 +1149,6 @@ body {
 	.footer__block-top {
 		gap: 10px;
 	}
-	.footer__messege-top {
-		display: none;
-	}
 	.footer__body {
 		padding: 0 0 10px 0;
 	}
@@ -1240,9 +1204,6 @@ body {
 	.scroll-to-top-btn {
 		bottom: 70px;
 		right: 5px;
-	}
-	.scroll-chat-btn {
-		display: none;
 	}
 	.modal-content {
 		border: 1px solid #28293e;

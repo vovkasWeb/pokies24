@@ -20,8 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			modalTreatment(target.querySelector('.game__img-list'))
 		}
 	}
+	
+	
+
 	listItem.addEventListener('click', openModal)
 	listItemMini.addEventListener('click', openModal)
+	
 	const closedModal = () => {
 		modalOverlay.classList.remove('open')
 		document.body.style.overflow = ''

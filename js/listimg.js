@@ -512,7 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			gameElement.classList.add('game__block-img')
 			gameElement.innerHTML = `
             <img class="game__img-list" src="./img/game/${game.imgName}.png" alt="${game.imgName}">
-			<button class="game_btn-list btn-yello">Play</button>
+			<span class="game_btn-list btn-yello">Play</span>
         `
 			blockGame.appendChild(gameElement)
 		})
