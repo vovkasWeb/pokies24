@@ -448,89 +448,92 @@ const img = [
 		Megaways: false,
 	},
 ]
+document.addEventListener('DOMContentLoaded', () => {
+	const blockGameMini = document.querySelector('.game__list-mobile')
+	const butsSortMini = document.querySelectorAll('.game__btn-mobile')
+	const showMoreBtn = document.querySelector('.show-more-btn')
 
-const blockGameMini = document.querySelector('.game__list-mobile')
-const butsSortMini = document.querySelectorAll('.game__btn-mobile')
-const showMoreBtn = document.querySelector('.show-more-btn')
+	let currentFilter = 'all'
+	let currentGames = [...img]
+	let visibleCount = 18
 
-let currentFilter = 'all'
-let currentGames = [...img]
-let visibleCount = 18
+	butsSortMini[0].classList.add('active')
 
-butsSortMini[0].classList.add('active')
-
-function displayGamesMini(games, count) {
-	blockGameMini.innerHTML = ''
-	games.slice(0, count).forEach(game => {
-		const gameElement = document.createElement('img')
-		gameElement.className = 'game__img-list'
-		gameElement.src = `./img/game/${game.imgName}.png`
-		gameElement.alt = game.imgName
-		blockGameMini.appendChild(gameElement)
-	})
-	if (getComputedStyle(blockGameMini).display === 'grid') {
-		if (games.length > count) {
-			showMoreBtn.classList.remove('hidden')
-		} else {
-			showMoreBtn.classList.add('hidden')
+	function displayGamesMini(games, count) {
+		blockGameMini.innerHTML = ''
+		games.slice(0, count).forEach(game => {
+			const gameElement = document.createElement('img')
+			gameElement.className = 'game__img-list'
+			gameElement.src = `./img/game/${game.imgName}.png`
+			gameElement.alt = game.imgName
+			blockGameMini.appendChild(gameElement)
+		})
+		if (getComputedStyle(blockGameMini).display === 'grid') {
+			if (games.length > count) {
+				showMoreBtn.classList.remove('hidden')
+			} else {
+				showMoreBtn.classList.add('hidden')
+			}
 		}
 	}
-}
 
-butsSortMini.forEach(button => {
-	button.addEventListener('click', () => {
-		butsSortMini.forEach(btn => btn.classList.remove('active'))
-		button.classList.add('active')
+	butsSortMini.forEach(button => {
+		button.addEventListener('click', () => {
+			butsSortMini.forEach(btn => btn.classList.remove('active'))
+			button.classList.add('active')
 
-		currentFilter = button.getAttribute('data-filter')
-		visibleCount = 18
+			currentFilter = button.getAttribute('data-filter')
+			visibleCount = 18
 
-		if (currentFilter === 'all') {
-			currentGames = [...img]
-		} else {
-			currentGames = img.filter(game => game[currentFilter])
-		}
+			if (currentFilter === 'all') {
+				currentGames = [...img]
+			} else {
+				currentGames = img.filter(game => game[currentFilter])
+			}
 
+			displayGamesMini(currentGames, visibleCount)
+		})
+	})
+
+	showMoreBtn.addEventListener('click', () => {
+		visibleCount += 10
 		displayGamesMini(currentGames, visibleCount)
 	})
-})
 
-showMoreBtn.addEventListener('click', () => {
-	visibleCount += 10
 	displayGamesMini(currentGames, visibleCount)
-})
 
-displayGamesMini(currentGames, visibleCount)
-
-const blockGame = document.querySelector('.game__list')
-const butsSort = document.querySelectorAll('.game__btn')
-butsSort[0].classList.add('active')
-function displayGames(games) {
-	blockGame.innerHTML = '' 
-	games.forEach(game => {
-		const gameElement = document.createElement('div')
-		gameElement.innerHTML = `
+	const blockGame = document.querySelector('.game__list')
+	const butsSort = document.querySelectorAll('.game__btn')
+	butsSort[0].classList.add('active')
+	function displayGames(games) {
+		blockGame.innerHTML = ''
+		games.forEach(game => {
+			const gameElement = document.createElement('div')
+			gameElement.classList.add('game__block-img')
+			gameElement.innerHTML = `
             <img class="game__img-list" src="./img/game/${game.imgName}.png" alt="${game.imgName}">
+			<button class="game_btn-list btn-yello">Play</button>
         `
-		blockGame.appendChild(gameElement)
-	})
-}
+			blockGame.appendChild(gameElement)
+		})
+	}
 
-displayGames(img)
+	displayGames(img)
 
-butsSort.forEach(button => {
-	button.addEventListener('click', () => {
-		butsSort.forEach(btn => btn.classList.remove('active'))
-		button.classList.add('active')
-		const filter = button.getAttribute('data-filter')
-		let filteredGames
+	butsSort.forEach(button => {
+		button.addEventListener('click', () => {
+			butsSort.forEach(btn => btn.classList.remove('active'))
+			button.classList.add('active')
+			const filter = button.getAttribute('data-filter')
+			let filteredGames
 
-		if (filter === 'all') {
-			filteredGames = img
-		} else {
-			filteredGames = img.filter(game => game[filter])
-		}
+			if (filter === 'all') {
+				filteredGames = img
+			} else {
+				filteredGames = img.filter(game => game[filter])
+			}
 
-		displayGames(filteredGames)
+			displayGames(filteredGames)
+		})
 	})
 })
