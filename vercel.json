@@ -1,9 +1,0 @@
-{
-	"redirects": [
-		{
-			"source": "/go",
-			"destination": "https://www.youtube.com",
-			"permanent": true
-		}
-	]
-}
