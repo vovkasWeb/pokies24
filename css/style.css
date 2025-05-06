@@ -743,6 +743,10 @@ body {
 .footer__accordion {
 	display: none;
 }
+.footer__img-footer{
+	width: 76px;
+	height: auto;
+}
 .footer__menu-button {
 	border-top: 1px solid #424b57;
 	width: 100%;
