@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		games.slice(0, count).forEach(game => {
 			const gameElement = document.createElement('img')
 			gameElement.className = 'game__img-list'
-			gameElement.src = `./img/game/${game.imgName}.png`
+			gameElement.src = `./img/game/${game.imgName}.webp`
 			gameElement.alt = game.imgName
 			blockGameMini.appendChild(gameElement)
 		})
