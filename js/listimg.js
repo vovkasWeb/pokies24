@@ -445,7 +445,7 @@ const img = [
 		top: true,
 		new: true,
 		bonusBuy: false,
-		Megaways: false,
+		Megaways: true,
 	},
 ]
 document.addEventListener('DOMContentLoaded', () => {
