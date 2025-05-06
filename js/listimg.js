@@ -7,7 +7,7 @@ const img = [
 		Megaways: true,
 	},
 	{
-		imgName: 'Big Bass',
+		imgName: 'Big-Bass',
 		top: false,
 		new: false,
 		bonusBuy: false,
@@ -56,7 +56,7 @@ const img = [
 		Megaways: true,
 	},
 	{
-		imgName: 'Best Bet',
+		imgName: 'Best-Bet',
 		top: false,
 		new: false,
 		bonusBuy: false,
@@ -105,7 +105,7 @@ const img = [
 		Megaways: true,
 	},
 	{
-		imgName: 'Amazing Money',
+		imgName: 'Amazing-Money',
 		top: false,
 		new: false,
 		bonusBuy: false,
@@ -133,7 +133,7 @@ const img = [
 		Megaways: false,
 	},
 	{
-		imgName: '5 Dragons',
+		imgName: '5-Dragons',
 		top: false,
 		new: false,
 		bonusBuy: false,
@@ -203,7 +203,7 @@ const img = [
 		Megaways: true,
 	},
 	{
-		imgName: '50 Lions',
+		imgName: '50-Lions',
 		top: true,
 		new: true,
 		bonusBuy: true,
@@ -259,7 +259,7 @@ const img = [
 		Megaways: true,
 	},
 	{
-		imgName: 'Big Red',
+		imgName: 'Big-Red',
 		top: false,
 		new: false,
 		bonusBuy: false,
@@ -287,7 +287,7 @@ const img = [
 		Megaways: true,
 	},
 	{
-		imgName: '50 Dragons',
+		imgName: '50-Dragons',
 		top: false,
 		new: true,
 		bonusBuy: true,
@@ -322,7 +322,7 @@ const img = [
 		Megaways: true,
 	},
 	{
-		imgName: 'Autumn Moon',
+		imgName: 'Autumn-Moon',
 		top: false,
 		new: false,
 		bonusBuy: true,
@@ -343,7 +343,7 @@ const img = [
 		Megaways: false,
 	},
 	{
-		imgName: 'Big Ben',
+		imgName: 'Big-Ben',
 		top: false,
 		new: false,
 		bonusBuy: false,
@@ -371,7 +371,7 @@ const img = [
 		Megaways: true,
 	},
 	{
-		imgName: '5 Koi',
+		imgName: '5-Koi',
 		top: true,
 		new: false,
 		bonusBuy: true,
@@ -511,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			const gameElement = document.createElement('div')
 			gameElement.classList.add('game__block-img')
 			gameElement.innerHTML = `
-            <img class="game__img-list" src="./img/game/${game.imgName}.png" alt="${game.imgName}">
+            <img class="game__img-list" src="./img/game/${game.imgName}.webp" alt="${game.imgName}">
 			<span class="game_btn-list btn-yello">Play</span>
         `
 			blockGame.appendChild(gameElement)
